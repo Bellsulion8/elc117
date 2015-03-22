@@ -35,7 +35,7 @@ htmlListItems lis = map(++"</LI>") (map ("<LI>"++) lis)
 
 charFound :: Char -> String -> Bool
 charFound x y 
-		| y == []		 	=  False
+		| y == []			False
 		| x == (head y)		=	True
 		| otherwise 		= 	charFound x (tail y)
 		
@@ -45,7 +45,7 @@ charFound x y
 charFound2 :: Char -> String -> Bool
 charFound2 x y
 		| filter(== x) y == [x]		=	True
-		| otherwise					=	False
+		| otherwise			=	False
 
 --Ex9 Use a função de alta ordem 'zipWith' para produzir uma função que obtenha as diferenças, par a par, dos elementos de duas listas. Por exemplo: para listas de entrada [1,2,3,4] e [2,2,1,1], o resultado será [-1,0,2,3] 
 
