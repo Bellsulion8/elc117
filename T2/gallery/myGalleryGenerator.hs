@@ -27,7 +27,7 @@ genContent items = concat (map (imageDiv)items)
 
 -- List comprehension
 genContent_lc :: [(String,String)] -> String
-genContent_lc aux = concat [(imageDiv)lis | x <- aux]
+genContent_lc aux = concat [(imageDiv)lis | lis <- aux]
 
 
 main :: IO ()
