@@ -1,0 +1,71 @@
+bastao(bernardo).
+insano(adriano).
+insano(maria).
+pobre(bernardo).
+pobre(bia).
+pobre(pedro).
+pobre(maria).
+rico(caren).
+rico(alice).
+rico(henrique).
+rico(adriano).
+relacionamento(caren,adriano).
+relacionamento(adriano,caren).
+relacionamento(maria,adriano).
+relacionamento(adriano,maria).
+relacionamento(henrique,maria).
+relacionamento(maria,henrique).
+relacionamento(henrique,alice).
+relacionamento(alice,henrique).
+relacionamento(pedro,alice).
+relacionamento(alice,pedro).
+relacionamento(anita,pedro).
+relacionamento(pedro,anita).
+relacionamento(anita,bernardo).
+relacionamento(bernardo,anita).
+relacionamento(caren,bernardo).
+relacionamento(bernardo,caren).
+quarta(pedro,poa).
+segunda(pedro,sm).
+terca(pedro,sm).
+quinta(pedro,sm).
+sexta(pedro,apt).
+segunda(caren,poa).
+terca(caren,poa).
+quarta(caren,poa).
+quinta(caren,sm).
+sexta(caren,apt).
+segunda(henrique,apt).
+terca(henrique,poa).
+quarta(henrique,apt).
+quinta(henrique,apt).
+sexta(henrique,apt).
+segunda(bia,apt).
+terca(bia,poa).
+quarta(bia,poa).
+quinta(bia,sm).
+sexta(bia,apt).
+quarta(adriano,sm).
+quinta(adriano,apt).
+sexta(adriano,apt).
+terca(alice,poa).
+quarta(alice,poa).
+segunda(alice,apt).
+quinta(alice,apt).
+sexta(alice,apt).
+segunda(bernardo,sm).
+terca(bernardo,sm).
+quarta(bernardo,poa).
+quinta(bernardo,sm).
+sexta(bernardo,apt).
+terca(maria,sm).
+quinta(maria,sm).
+segunda(maria,apt).
+sexta(maria,apt).
+vitima(anita).
+arma(X):- quinta(X,poa); quarta(X,sm); quarta(X,apt); quinta(X,apt).
+chave(X):- segunda(X,sm); terca(X,poa).
+ciumes(X,Y):-relacionamento(X,Z), relacionamento(Y,Z).
+motivo(X):- ciumes(X,anita); insano(X); pobre(X).
+acesso(X):- arma(X), chave(X), (sexta(X,apt); quinta(X,apt)).
+assassino(X):-motivo(X), acesso(X).
